@@ -14,7 +14,12 @@ namespace Ecom.Infrastructure.Data.Config
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.Property(c => c.Name).IsRequired().HasMaxLength(30);
-            builder.Property(c=>c.Description).IsRequired();
+            builder.Property(c => c.Description).IsRequired();
+
+            //seed data only if it is empty
+            builder.HasData(
+                new Category { Id = 1, Description = "test", Name = "Test" }
+               );
         }
     }
 }
