@@ -1,5 +1,6 @@
 
 using Ecom.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 namespace Ecom.API
 {
     public class Program
@@ -15,6 +16,12 @@ namespace Ecom.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.InfrastructureConfiguration(builder.Configuration);
+
+            builder.Services.AddAutoMapper(cfg =>
+            {
+                cfg.AddMaps(AppDomain.CurrentDomain.GetAssemblies());
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -27,7 +34,6 @@ namespace Ecom.API
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
