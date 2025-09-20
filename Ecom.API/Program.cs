@@ -1,6 +1,9 @@
 
+using Ecom.core.Services;
 using Ecom.Infrastructure;
+using Ecom.Infrastructure.Repository.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 namespace Ecom.API
 {
     public class Program
@@ -15,13 +18,15 @@ namespace Ecom.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.InfrastructureConfiguration(builder.Configuration);
 
             builder.Services.AddAutoMapper(cfg =>
             {
                 cfg.AddMaps(AppDomain.CurrentDomain.GetAssemblies());
             });
 
+            builder.Services.InfrastructureConfiguration(builder.Configuration);
+
+         
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

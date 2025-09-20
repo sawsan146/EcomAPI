@@ -21,11 +21,11 @@ namespace Ecom.Infrastructure.Data.Config
         {
             builder.Property(p=>p.Name).IsRequired().HasMaxLength(30);
             builder.Property(p=>p.Description).IsRequired();
-            builder.Property(p=>p.price).HasColumnType("decimal(18,2)").IsRequired();
+            builder.Property(p=>p.NewPrice).HasColumnType("decimal(18,2)").IsRequired();
+            builder.Property(p=>p.OldPrice).HasColumnType("decimal(18,2)");
 
             builder.HasData(
-                new Product { Id = 1, Name = "Test", CategoryId = 1, Description = "Test", price = 2000 }
-                );
+                new Product { Id = 1, Name = "Test", CategoryId = 1, Description = "Test", NewPrice = 2000 });
         }
     }
 }

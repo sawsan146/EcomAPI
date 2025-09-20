@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Ecom.API.DTOs;
+using Ecom.core.DTOs;
 using Ecom.API.Helper;
 using Ecom.core.Entities.Product;
 using Ecom.core.Interfaces;

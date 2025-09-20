@@ -1,4 +1,4 @@
-﻿namespace Ecom.API.DTOs
+﻿namespace Ecom.core.DTOs
 {
     public record CategoryDto
     (string Name,string Description);

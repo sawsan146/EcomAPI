@@ -43,7 +43,7 @@ namespace Ecom.Infrastructure.Repository
 
             foreach (var include in includes)
             {
-                query.Include(include);
+                query=query.Include(include);
             }
 
             return await query.ToListAsync();
@@ -63,7 +63,7 @@ namespace Ecom.Infrastructure.Repository
 
             foreach (var include in includes)
             {
-                query.Include(include);
+                query=query.Include(include);
             }
 
             var entity = await query.FirstOrDefaultAsync(x=>EF.Property<int>(x,"Id")==id);

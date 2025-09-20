@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Ecom.API.DTOs;
+using Ecom.core.DTOs;
 using Ecom.core.Entities.Product;
 
 namespace Ecom.API.Mapping
